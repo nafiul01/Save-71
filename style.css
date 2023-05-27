@@ -1,0 +1,63 @@
+.custom-container{
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1.2rem;
+    }
+
+
+    .accordion-button[aria-expanded="true"] .fa-chevron-down {
+      transform: rotate(180deg);
+    }
+
+    .product a{
+      opacity: 0;
+      transition: 0.1s;
+      -webkit-transition: 0.1s;
+      -moz-transition: 0.1s;
+      -ms-transition: 0.1s;
+      -o-transition: 0.1s;
+      bottom: -10%;
+}
+
+    .product:hover a{
+      opacity: 1;
+      bottom:10%;
+    }
+
+    @media (min-width: 768px) {
+    .main-menu ul li {
+      position: relative;
+    }
+    
+    .main-menu .sub-menu {
+      position: absolute;
+      width: 100%;
+      background: #fff;
+      left: 0;
+      padding: 12px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 3px 3px #f6f6f6;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 99999;
+    }
+    
+    
+    .main-menu > ul > li:hover .sub-menu {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+  }
+
+  .main-menu .sub-menu li a {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .sub-menu{
+    margin-top: 7px;
+  }
