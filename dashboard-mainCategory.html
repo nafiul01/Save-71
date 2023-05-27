@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 <body class="font-sans">
-  <section class=" max-w-[1920px] ml-auto mr-auto">
+  <section class=" max-w-[1920px] ml-auto mr-auto relative">
 
     <!-- Navigation Menu -->
     <div class="relative">
@@ -152,7 +152,7 @@
                 <input class="py-2 pl-3 pr-6 focus:outline-none max-w-[205px] rounded-md" type="text" placeholder="Search categories...">
                 <i class="fa-solid fa-magnifying-glass absolute top-1/2 right-2 -translate-y-1/2 text-tColor"></i>
                </div>
-               <a href="#" class="primary-btn">+  Add Category</a>
+               <button class="primary-btn" id="add-category-btn">+  Add Category</button>
           </div>
 
           <!-- All Orders Table -->
@@ -347,6 +347,27 @@
 
     </div>
 
+        <!-- Add Extra Category Section -->
+        <div class="bg-white h-screen max-h-[1080px] w-full xl:w-1/3 2xl:w-1/4 absolute top-0 right-0 shadow-lg p-10 hidden" id="add-category">
+          <form action="">
+      
+            <div class="flex justify-between items-center">
+              <p class="text-xl font-semibold">Add Category</p>
+              <button id="category-close-button"><i class="fa-solid fa-xmark bg-secondaryColor text-white text-sm rounded-[50%] px-[7px] py-[5px]"></i></button>
+            </div>
+      
+            <p class="my-5 text-tColor2">You only need to enter the basic information when you create the categories.</p>
+      
+            <div>
+              <p class="mb-2">Category Name</p>
+              <input class=" border rounded px-3 py-2 flex-1 focus:outline-none focus:shadow-outline w-full" type="text" id="category-name" name="category-name" placeholder="Category Name">
+            </div>
+      
+            <button class="bg-primaryColor text-white rounded px-4 py-2 w-full mt-5" type="submit">Publish</button>
+          </form>
+      
+          </div>
+
 </section>
 
 
@@ -398,6 +419,23 @@
       accordionMenu.classList.add('hidden');  
     }
   });
+
+</script>
+
+<!-- Add Sub Category -->
+<script>
+
+  const categoryOpen = document.getElementById("add-category-btn");
+  const categoryClose = document.getElementById("category-close-button");
+  const categorySection = document.getElementById("add-category");
+
+  categoryOpen.onclick = function(){
+    categorySection.classList.remove("hidden");
+  }
+
+  categoryClose.onclick = function(){
+    categorySection.classList.add("hidden");
+  }
 
 </script>
 
