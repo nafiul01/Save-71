@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save 71 - Dashboard - Comission History</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body class="font-sans">
+  <section class=" max-w-[1920px] ml-auto mr-auto">
+
+    <!-- Navigation Menu -->
+    <div class="relative">
+        
+        <nav class="bg-white fixed min-[2000px]:absolute top-0 flex flex-row xl:flex-col justify-between max-h-[800px] custom-container shadow-sm xl:shadow-none w-full xl:w-fit z-10">
+            
+            <div class="">
+                <a href="index.html" class="h-10 w-10"><img class="xl:my-5 py-5 xl:p-5 xl:ml-4 h-16 xl:h-16" src="img/logo.svg" alt=""></a>
+
+                <div class="bg-white xl:bg-transparent hidden xl:grid gap-3 absolute xl:static top-12 right-0 z-10 rounded-sm px-5 py-5 xl:py-0 2xl:py-5 max-h-[800px] xl:max-h-[450px] 2xl:max-h-[700px] overflow-y-auto scroll-h min-w-[195px] scroll-smooth shadow-md xl:shadow-none" id="toggle-menu">
+
+                    <button class="accordion-button menu-list">
+                        <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                        <span>Finace</span>
+                        <i class="ml-auto fa-solid fa-chevron-down"></i>
+                    </button>
+
+                      <ul class="menu-collapse">
+                        <li><a href="#">Earning History</a></li>
+                        <li><a href="#">Comission History</a></li>
+                        <li><a href="#">Withdraw History</a></li>
+                        <li><a href="#">Company Costing</a></li>
+                      </ul>
+
+                    <button class="accordion-button menu-list">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>Product</span>
+                        <i class="ml-auto fa-solid fa-chevron-down"></i>
+                    </button>
+
+                      <ul class="menu-collapse">
+                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">Categories</a></li>
+                      </ul>
+
+
+                    <a class="menu-list" href="#">
+                      <i class="fa-solid text-xs fa-user-group"></i>
+                      <span>Customers</span>
+                    </a>
+
+                    <a class="menu-list" href="#">
+                      <i class="fa-solid fa-address-book"></i>
+                      <span>Sellers</span>
+                    </a>
+
+                    <button class="accordion-button menu-list">
+                      <i class="fa-solid fa-gear"></i>
+                      <span>Settings</span>
+                      <i class="ml-auto fa-solid fa-chevron-down"></i>
+                    </button>
+
+                      <ul class="menu-collapse">
+                        <li><a href="#">Manage Profile</a></li>
+                        <li><a href="#">My Profile</a></li>
+                      </ul>
+
+                    <a class="menu-list" href="student.html">
+                      <i class="fa-solid fa-envelope-open-text"></i>
+                      <span>Message</span>
+                    </a>
+
+                    <a class="menu-list" href="allStudents.html">
+                      <i class="fa-solid fa-table-list"></i>
+                      <span>Orders</span>
+                    </a>
+
+
+
+                </div>
+            </div>
+
+            <!-- Logout Menu Section -->
+            <div class="flex items-center px-0 xl:px-4 xl:py-3 xl:mt-10">
+                <a class="menu-list text-primaryColor hover:bg-transparent" href="#">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.75 9V5.25C15.75 4.65326 15.5129 4.08097 15.091 3.65901C14.669 3.23705 14.0967 3 13.5 3H7.5C6.90326 3 6.33097 3.23705 5.90901 3.65901C5.48705 4.08097 5.25 4.65326 5.25 5.25V18.75C5.25 19.3467 5.48705 19.919 5.90901 20.341C6.33097 20.7629 6.90326 21 7.5 21H13.5C14.0967 21 14.669 20.7629 15.091 20.341C15.5129 19.919 15.75 19.3467 15.75 18.75V15M18.75 15L21.75 12M21.75 12L18.75 9M21.75 12H9" stroke="#1A63A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        
+                    <span class="hidden md:block">Log Out</span>
+                </a>
+                
+                <button class="block xl:hidden" id="toggle-button">
+                    <svg class="-mr-[1px]" height="24px" width="24px" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                      </svg>
+                </button>    
+                </a>
+
+            </div>
+                
+         
+
+        </nav>
+        
+    </div>
+
+
+
+
+    <!-- Right Side Section -->
+    <div class="ml-auto w-full xl:w-5/6 px-0 xl:px-5 py-2 mt-16 xl:mt-0">
+
+
+       <!-- Project Overview Header -->
+
+        <div class="flex items-center justify-between px-5 py-2 xl:py-5 gap-4 border-b-2">
+            <!-- Search Box -->
+            <div class="bg-white relative">
+                <input class="py-2 pr-3 pl-6 focus:outline-none max-w-[180px]" type="text" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass absolute top-1/2 left-0 -translate-y-1/2 text-tColor"></i>
+            </div>
+
+            <!-- Notification & User -->
+            <div class="text-xs xl:text-base flex items-center gap-3 xl:gap-5">
+                
+                <a class="" href="#">
+                    <svg width="24" height="24" fill="#84818A" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"></path>
+                    </svg>
+                </a>
+
+                <a href="#" class="flex items-center gap-2">
+                    <img class="h-6 w-6" src="img/user.png" alt="">
+                    <p class="font-semibold text-sm">Maxbert</p>
+                    <i class="fa-solid fa-sort-down -mt-2 text-tColor"></i>
+                </a>
+            </div>
+            
+        </div>
+
+        <div class="bg-gray-100 px-5 pt-5 rounded-md">
+          
+          <div class="flex items-center flex-wrap gap-5">
+            <p class="text-xl xl:text-2xl font-semibold text-tColor2">Comission History</p>
+            <div class="relative">
+              <select name="" id="" class="px-2 py-1 border-2 focus:outline-none">
+                <option value="">12 months</option>
+                <option value="">6 months</option>
+                <option value="">3 months</option>
+                <option value="">2 months</option>
+                <option value="">1 month</option>
+              </select>
+            </div>
+            <button><div class="flex items-center gap-2 text-white bg-[#FFA043] rounded px-2 py-1">
+              <p>Download List as PDF</p>
+              <i class="fa-solid fa-download text-sm"></i>
+            </div></button>
+          </div>
+
+          <div class="bg-[#2874A6] text-white flex flex-col xl:flex-row justify-between xl:items-center mt-5 rounded-lg flex-wrap p-5 xl:p-0 gap-3">
+            <div class="xl:my-10 xl:px-16">
+              <p class="text-sm">Due Comission</p>
+              <p><span class="text-3xl">32,000</span> <span>BDT</span></p>
+            </div>
+            <div class="w-10 xl:w-[1px] h-[1px] xl:h-12 bg-white"></div>
+            <div class="xl:my-10 xl:px-16">
+              <p class="text-sm">Total Paid Comission</p>
+              <p><span class="text-3xl">256,000</span> <span>BDT</span></p>
+            </div>
+            
+          </div>
+
+          <!-- All Orders Table -->
+          <div class="mt-5">
+
+            <div class="flex flex-col justify-around">
+
+              <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-3">
+
+                <ul class="flex gap-7 border-b-2 pb-2 flex-wrap">
+                  <li><a href="" class="font-semibold border-b-2 border-primaryColor pb-[10px]">Due Comission List</a></li>
+                  <li class="text-tColor"><a href="">Paid Comission List</a></li>
+                </ul>
+
+                <div class="relative ml-auto">
+                  <button class="accordion-button menu-list">
+                    <i class="fa-solid fa-filter"></i>
+                    <span>Filter By</span>
+                    <i class="fa-solid fa-sort-down -mt-1"></i>
+                  </button>
+
+                  <ul class="menu-collapse bg-white absolute right-0 p-5 shadow-md">
+                    <li><a href="#">By Name</a></li>
+                    <li><a href="#">By Price</a></li>
+                    <li><a href="#">By Category</a></li>
+                    <li><a href="#">By Sales</a></li>
+                  </ul>
+                </div>
+
+
+            </div>
+
+              <div class="bg-white pt-5 mt-5 overflow-x-scroll md:overflow-hidden px-5">
+                <table class="table-auto text-xs md:text-sm profile-table w-[230%] md:w-full">
+                  <thead>
+                    <tr>
+                      <th>PROFILE</th>
+                      <th>LOCATION</th>
+                      <th>PURPOSE</th>
+                      <th>DATE</th>
+                      <th>COMISSION AMOUNT</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-4">
+                          <img src="img/user-5.png" alt="" class="h-9 w-9 rounded-[50%]">
+                          <div>
+                            <p class="font-semibold">Dianne Russell</p>
+                            <p class="text-tColor">lu@sa.co.uk</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <p class="font-semibold">Atlanta,</p>
+                          <div class="flex items-center gap-1">
+                            <img src="img/us.png" alt="">
+                            <p>United States</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Reference</td>
+                      <td>21 Sep, 2020</td>
+                      <td>$45.60</td>
+                      <td>
+                        <button class="table-button"><i class="fa-solid fa-eye text-tColor"></i></button>
+
+                        <!-- Pop up Details -->
+                        <div class="table-collapse fixed bottom-0 right-0 bg-black/50 h-full w-full flex justify-center items-center  z-10 hidden">
+
+                          <div class="bg-white border-2 border-primaryColor rounded-lg min-w-[350px] p-5">
+                            <div class="flex justify-between items-center">
+                              <p class="font-semibold text-lg">Comission History</p>
+                              <button class="table-close"><i class="fa-solid fa-xmark bg-secondaryColor text-white text-sm rounded-[50%] px-[7px] py-[5px]"></i></button>
+                            </div>
+                            <div class="flex gap-5 items-center mt-5">
+                              <img src="img/user-5.png" alt="" class="h-8 w-8 rounded-[50%]">
+                              <div>
+                                <p class="font-semibold">Dianne Russell</p>
+                                <p class="text-tColor">lu@sa.co.uk</p>
+                              </div>
+                            </div>
+                            <p class="mt-5 font-semibold">Comission Details</p>
+                            <p class="mt-2 text-tColor">Date: <span>12 May, 2023</span></p>
+                            <p class="mt-2 text-tColor">Location: <span>Atlana, US</span></p>
+
+                            <div class="grid gap-5 border-b pb-5 max-h-[280px] overflow-y-auto my-5">
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+                              
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                            </div>
+                            <div class="flex justify-between items-center mt-5">
+                              <p>Total</p>
+                              <p class="text-lg font-semibold">$ <span>155.60</span></p>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-4">
+                          <img src="img/user-5.png" alt="" class="h-9 w-9 rounded-[50%]">
+                          <div>
+                            <p class="font-semibold">Dianne Russell</p>
+                            <p class="text-tColor">lu@sa.co.uk</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <p class="font-semibold">Atlanta,</p>
+                          <div class="flex items-center gap-1">
+                            <img src="img/us.png" alt="">
+                            <p>United States</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Reference</td>
+                      <td>21 Sep, 2020</td>
+                      <td>$45.60</td>
+                      <td>
+                        <button class="table-button"><i class="fa-solid fa-eye text-tColor"></i></button>
+
+                        <!-- Pop up Details -->
+                        <div class="table-collapse fixed bottom-0 right-0 bg-black/50 h-full w-full flex justify-center items-center  z-10 hidden">
+
+                          <div class="bg-white border-2 border-primaryColor rounded-lg min-w-[350px] p-5">
+                            <div class="flex justify-between items-center">
+                              <p class="font-semibold text-lg">Comission History</p>
+                              <button class="table-close"><i class="fa-solid fa-xmark bg-secondaryColor text-white text-sm rounded-[50%] px-[7px] py-[5px]"></i></button>
+                            </div>
+                            <div class="flex gap-5 items-center mt-5">
+                              <img src="img/user-5.png" alt="" class="h-8 w-8 rounded-[50%]">
+                              <div>
+                                <p class="font-semibold">Dianne Russell</p>
+                                <p class="text-tColor">lu@sa.co.uk</p>
+                              </div>
+                            </div>
+                            <p class="mt-5 font-semibold">Comission Details</p>
+                            <p class="mt-2 text-tColor">Date: <span>12 May, 2023</span></p>
+                            <p class="mt-2 text-tColor">Location: <span>Atlana, US</span></p>
+
+                            <div class="grid gap-5 border-b pb-5 max-h-[280px] overflow-y-auto my-5">
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+                              
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                            </div>
+                            <div class="flex justify-between items-center mt-5">
+                              <p>Total</p>
+                              <p class="text-lg font-semibold">$ <span>155.60</span></p>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-4">
+                          <img src="img/user-5.png" alt="" class="h-9 w-9 rounded-[50%]">
+                          <div>
+                            <p class="font-semibold">Dianne Russell</p>
+                            <p class="text-tColor">lu@sa.co.uk</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <p class="font-semibold">Atlanta,</p>
+                          <div class="flex items-center gap-1">
+                            <img src="img/us.png" alt="">
+                            <p>United States</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Sells</td>
+                      <td>21 Sep, 2020</td>
+                      <td>$45.60</td>
+                      <td>
+                        <button class="table-button"><i class="fa-solid fa-eye text-tColor"></i></button>
+
+                        <!-- Pop up Details -->
+                        <div class="table-collapse fixed bottom-0 right-0 bg-black/50 h-full w-full flex justify-center items-center  z-10 hidden">
+
+                          <div class="bg-white border-2 border-primaryColor rounded-lg min-w-[350px] p-5">
+                            <div class="flex justify-between items-center">
+                              <p class="font-semibold text-lg">Comission History</p>
+                              <button class="table-close"><i class="fa-solid fa-xmark bg-secondaryColor text-white text-sm rounded-[50%] px-[7px] py-[5px]"></i></button>
+                            </div>
+                            <div class="flex gap-5 items-center mt-5">
+                              <img src="img/user-5.png" alt="" class="h-8 w-8 rounded-[50%]">
+                              <div>
+                                <p class="font-semibold">Dianne Russell</p>
+                                <p class="text-tColor">lu@sa.co.uk</p>
+                              </div>
+                            </div>
+                            <p class="mt-5 font-semibold">Comission Details</p>
+                            <p class="mt-2 text-tColor">Date: <span>12 May, 2023</span></p>
+                            <p class="mt-2 text-tColor">Location: <span>Atlana, US</span></p>
+
+                            <div class="grid gap-5 border-b pb-5 max-h-[280px] overflow-y-auto my-5">
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+                              
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                            </div>
+                            <div class="flex justify-between items-center mt-5">
+                              <p>Total</p>
+                              <p class="text-lg font-semibold">$ <span>155.60</span></p>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-4">
+                          <img src="img/user-5.png" alt="" class="h-9 w-9 rounded-[50%]">
+                          <div>
+                            <p class="font-semibold">Dianne Russell</p>
+                            <p class="text-tColor">lu@sa.co.uk</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <p class="font-semibold">Atlanta,</p>
+                          <div class="flex items-center gap-1">
+                            <img src="img/us.png" alt="">
+                            <p>United States</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Sells</td>
+                      <td>21 Sep, 2020</td>
+                      <td>$45.60</td>
+                      <td>
+                        <button class="table-button"><i class="fa-solid fa-eye text-tColor"></i></button>
+
+                        <!-- Pop up Details -->
+                        <div class="table-collapse fixed bottom-0 right-0 bg-black/50 h-full w-full flex justify-center items-center  z-10 hidden">
+
+                          <div class="bg-white border-2 border-primaryColor rounded-lg min-w-[350px] p-5">
+                            <div class="flex justify-between items-center">
+                              <p class="font-semibold text-lg">Comission History</p>
+                              <button class="table-close"><i class="fa-solid fa-xmark bg-secondaryColor text-white text-sm rounded-[50%] px-[7px] py-[5px]"></i></button>
+                            </div>
+                            <div class="flex gap-5 items-center mt-5">
+                              <img src="img/user-5.png" alt="" class="h-8 w-8 rounded-[50%]">
+                              <div>
+                                <p class="font-semibold">Dianne Russell</p>
+                                <p class="text-tColor">lu@sa.co.uk</p>
+                              </div>
+                            </div>
+                            <p class="mt-5 font-semibold">Comission Details</p>
+                            <p class="mt-2 text-tColor">Date: <span>12 May, 2023</span></p>
+                            <p class="mt-2 text-tColor">Location: <span>Atlana, US</span></p>
+
+                            <div class="grid gap-5 border-b pb-5 max-h-[280px] overflow-y-auto my-5">
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+                              
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                            </div>
+                            <div class="flex justify-between items-center mt-5">
+                              <p>Total</p>
+                              <p class="text-lg font-semibold">$ <span>155.60</span></p>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-4">
+                          <img src="img/user-5.png" alt="" class="h-9 w-9 rounded-[50%]">
+                          <div>
+                            <p class="font-semibold">Dianne Russell</p>
+                            <p class="text-tColor">lu@sa.co.uk</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <p class="font-semibold">Atlanta,</p>
+                          <div class="flex items-center gap-1">
+                            <img src="img/us.png" alt="">
+                            <p>United States</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Reference</td>
+                      <td>21 Sep, 2020</td>
+                      <td>$45.60</td>
+                      <td>
+                        <button class="table-button"><i class="fa-solid fa-eye text-tColor"></i></button>
+
+                        <!-- Pop up Details -->
+                        <div class="table-collapse fixed bottom-0 right-0 bg-black/50 h-full w-full flex justify-center items-center  z-10 hidden">
+
+                          <div class="bg-white border-2 border-primaryColor rounded-lg min-w-[350px] p-5">
+                            <div class="flex justify-between items-center">
+                              <p class="font-semibold text-lg">Comission History</p>
+                              <button class="table-close"><i class="fa-solid fa-xmark bg-secondaryColor text-white text-sm rounded-[50%] px-[7px] py-[5px]"></i></button>
+                            </div>
+                            <div class="flex gap-5 items-center mt-5">
+                              <img src="img/user-5.png" alt="" class="h-8 w-8 rounded-[50%]">
+                              <div>
+                                <p class="font-semibold">Dianne Russell</p>
+                                <p class="text-tColor">lu@sa.co.uk</p>
+                              </div>
+                            </div>
+                            <p class="mt-5 font-semibold">Comission Details</p>
+                            <p class="mt-2 text-tColor">Date: <span>12 May, 2023</span></p>
+                            <p class="mt-2 text-tColor">Location: <span>Atlana, US</span></p>
+
+                            <div class="grid gap-5 border-b pb-5 max-h-[280px] overflow-y-auto my-5">
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+                              
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                            </div>
+                            <div class="flex justify-between items-center mt-5">
+                              <p>Total</p>
+                              <p class="text-lg font-semibold">$ <span>155.60</span></p>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-4">
+                          <img src="img/user-5.png" alt="" class="h-9 w-9 rounded-[50%]">
+                          <div>
+                            <p class="font-semibold">Dianne Russell</p>
+                            <p class="text-tColor">lu@sa.co.uk</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <p class="font-semibold">Atlanta,</p>
+                          <div class="flex items-center gap-1">
+                            <img src="img/us.png" alt="">
+                            <p>United States</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Sells</td>
+                      <td>21 Sep, 2020</td>
+                      <td>$45.60</td>
+                      <td>
+                        <button class="table-button"><i class="fa-solid fa-eye text-tColor"></i></button>
+
+                        <!-- Pop up Details -->
+                        <div class="table-collapse fixed bottom-0 right-0 bg-black/50 h-full w-full flex justify-center items-center  z-10 hidden">
+
+                          <div class="bg-white border-2 border-primaryColor rounded-lg min-w-[350px] p-5">
+                            <div class="flex justify-between items-center">
+                              <p class="font-semibold text-lg">Comission History</p>
+                              <button class="table-close"><i class="fa-solid fa-xmark bg-secondaryColor text-white text-sm rounded-[50%] px-[7px] py-[5px]"></i></button>
+                            </div>
+                            <div class="flex gap-5 items-center mt-5">
+                              <img src="img/user-5.png" alt="" class="h-8 w-8 rounded-[50%]">
+                              <div>
+                                <p class="font-semibold">Dianne Russell</p>
+                                <p class="text-tColor">lu@sa.co.uk</p>
+                              </div>
+                            </div>
+                            <p class="mt-5 font-semibold">Comission Details</p>
+                            <p class="mt-2 text-tColor">Date: <span>12 May, 2023</span></p>
+                            <p class="mt-2 text-tColor">Location: <span>Atlana, US</span></p>
+
+                            <div class="grid gap-5 border-b pb-5 max-h-[280px] overflow-y-auto my-5">
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+                              
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                            </div>
+                            <div class="flex justify-between items-center mt-5">
+                              <p>Total</p>
+                              <p class="text-lg font-semibold">$ <span>155.60</span></p>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-4">
+                          <img src="img/user-5.png" alt="" class="h-9 w-9 rounded-[50%]">
+                          <div>
+                            <p class="font-semibold">Dianne Russell</p>
+                            <p class="text-tColor">lu@sa.co.uk</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <p class="font-semibold">Atlanta,</p>
+                          <div class="flex items-center gap-1">
+                            <img src="img/us.png" alt="">
+                            <p>United States</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>Sells</td>
+                      <td>21 Sep, 2020</td>
+                      <td>$45.60</td>
+                      <td>
+                        <button class="table-button"><i class="fa-solid fa-eye text-tColor"></i></button>
+
+                        <!-- Pop up Details -->
+                        <div class="table-collapse fixed bottom-0 right-0 bg-black/50 h-full w-full flex justify-center items-center  z-10 hidden">
+
+                          <div class="bg-white border-2 border-primaryColor rounded-lg min-w-[350px] p-5">
+                            <div class="flex justify-between items-center">
+                              <p class="font-semibold text-lg">Comission History</p>
+                              <button class="table-close"><i class="fa-solid fa-xmark bg-secondaryColor text-white text-sm rounded-[50%] px-[7px] py-[5px]"></i></button>
+                            </div>
+                            <div class="flex gap-5 items-center mt-5">
+                              <img src="img/user-5.png" alt="" class="h-8 w-8 rounded-[50%]">
+                              <div>
+                                <p class="font-semibold">Dianne Russell</p>
+                                <p class="text-tColor">lu@sa.co.uk</p>
+                              </div>
+                            </div>
+                            <p class="mt-5 font-semibold">Comission Details</p>
+                            <p class="mt-2 text-tColor">Date: <span>12 May, 2023</span></p>
+                            <p class="mt-2 text-tColor">Location: <span>Atlana, US</span></p>
+
+                            <div class="grid gap-5 border-b pb-5 max-h-[280px] overflow-y-auto my-5">
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+                              
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                              <div class="flex gap-5 items-center justify-between">
+                                <img src="img/Product-1.png" alt="">
+                                <div class="mr-auto">
+                                  <p class="font-semibold">Linmon Dark Grey </p>
+                                  <p>Type : <span>D750 FX</span></p>
+                                </div>
+                                <p class="text-lg font-semibold">$ <span>45.60</span></p>
+                              </div>
+
+                            </div>
+                            <div class="flex justify-between items-center mt-5">
+                              <p>Total</p>
+                              <p class="text-lg font-semibold">$ <span>155.60</span></p>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                    
+
+
+
+
+                   
+                  </tbody>
+                </table>
+
+              </div>
+
+                <!-- Page Select -->
+                <div class="flex flex-col xl:flex-row justify-between xl:items-center py-5 gap-2">
+                  <p class="text-center text-xs xl:text-sm text-tColor">Show <span>7</span> from <span>120</span> Earnings</p>
+
+                  <div class="scale-75 xl:scale-100 grid grid-flow-col content-center ml-auto mr-auto xl:mr-0 font-semibold xl:text-sm text-tColor gap-3">
+                      <a class="h-6 w-6 rounded flex items-center justify-center"  href="#"><svg width="6" height="10" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.125 0.75L0.875 7L7.125 13.25" stroke="#84818A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                          </a>
+                      <a class="bg-blue-100 text-primaryColor h-6 w-6 rounded flex items-center justify-center"  href="#">1</a>
+                      <a class="h-6 w-6 rounded flex items-center justify-center" href="#">2</a>
+                      <a class="h-6 w-6 rounded flex items-center justify-center"  href="#">3</a>
+                      <a class="h-6 w-6 rounded flex items-center justify-center"  href="#">4</a>
+                      <a class="h-6 w-6 rounded flex items-center justify-center"  href="#">5</a>
+                      <a class="h-6 w-6 rounded flex items-center justify-center"  href="#">...</a>
+                      <a class="h-6 w-6 rounded flex items-center justify-center"  href="#">12</a>
+                      <a class="h-6 w-6 rounded flex items-center justify-center"  href="#"><svg width="6" height="10" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.875 0.75L7.125 7L0.875 13.25" stroke="#84818A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                          </a>
+                  </div>
+                </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+    
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- Header Section Script -->
+<script> 
+  // Menu toggle button 
+    const toggleButton = document.getElementById("toggle-button");
+    const toggleMenu = document.getElementById("toggle-menu");
+    var toggleCounter = 1;
+    toggleButton.onclick = function () {
+      toggleCounter++;
+      if(toggleCounter%2 == 0){
+        toggleMenu.classList.remove("hidden");
+        toggleMenu.classList.add("grid");
+      }
+      else{
+        toggleMenu.classList.remove("grid");
+        toggleMenu.classList.add("hidden");
+      }
+    }
+
+
+  </script>
+
+
+<!-- Accordion Script -->
+<script>
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+  const accordionMenu = document.querySelectorAll('.menu-collapse');
+
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const accordionCollapse = button.nextElementSibling;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      accordionCollapse.classList.toggle('hidden');
+    });
+  });
+
+  // Set all accordion items to collapsed state by default
+  document.querySelectorAll('.menu-collapse').forEach(collapse => {
+    collapse.classList.add('hidden');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!accordionMenu.contains(e.target) && !accordionButtons.contains(e.target)){
+      accordionMenu.classList.add('hidden');  
+    }
+  });
+
+</script>
+
+
+<!-- Table Script -->
+<script>
+  const tableButtons = document.querySelectorAll('.table-button');
+  const tableMenu = document.querySelectorAll('.table-collapse');
+  const tableClose = document.querySelectorAll('.table-close');
+
+  tableButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tableCollapse = button.nextElementSibling;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      tableCollapse.classList.toggle('hidden');
+    });
+  });
+
+  tableClose.forEach(button => {
+    button.addEventListener('click', () => {
+      const tableCollapse = button.parentElement.parentElement.parentElement;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      tableCollapse.classList.toggle('hidden');
+    });
+  });
+
+
+</script>
+
+
+
+</body>
+</html>
