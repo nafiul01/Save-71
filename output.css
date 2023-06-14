@@ -912,6 +912,10 @@ h6 {
   width: 100%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .min-w-\[150px\] {
   min-width: 150px;
 }
@@ -928,6 +932,18 @@ h6 {
   min-width: 350px;
 }
 
+.min-w-\[600px\] {
+  min-width: 600px;
+}
+
+.min-w-\[500px\] {
+  min-width: 500px;
+}
+
+.min-w-\[700px\] {
+  min-width: 700px;
+}
+
 .max-w-\[180px\] {
   max-width: 180px;
 }
@@ -942,6 +958,14 @@ h6 {
 
 .max-w-\[700px\] {
   max-width: 700px;
+}
+
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
+.max-w-\[600px\] {
+  max-width: 600px;
 }
 
 .flex-1 {
@@ -1112,6 +1136,19 @@ h6 {
   border-width: 2px;
 }
 
+.border-\[1px\] {
+  border-width: 1px;
+}
+
+.border-\[2px\] {
+  border-width: 2px;
+}
+
+.border-y-2 {
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1235,6 +1272,18 @@ h6 {
   padding: 1.25rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-\[5px\] {
+  padding: 5px;
+}
+
+.p-\[7px\] {
+  padding: 7px;
+}
+
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -1325,6 +1374,11 @@ h6 {
   padding-bottom: 5px;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -1367,6 +1421,10 @@ h6 {
 
 .text-center {
   text-align: center;
+}
+
+.align-top {
+  vertical-align: top;
 }
 
 .font-sans {
@@ -1491,6 +1549,11 @@ h6 {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .duration-75 {
@@ -1624,6 +1687,14 @@ h6 {
     width: fit-content;
   }
 
+  .xl\:min-w-\[700px\] {
+    min-width: 700px;
+  }
+
+  .xl\:max-w-\[700px\] {
+    max-width: 700px;
+  }
+
   .xl\:scale-100 {
     --tw-scale-x: 1;
     --tw-scale-y: 1;
@@ -1636,6 +1707,10 @@ h6 {
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .xl\:flex-row {
