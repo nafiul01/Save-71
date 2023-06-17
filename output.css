@@ -693,6 +693,10 @@ h6 {
   top: 9px;
 }
 
+.\!top-0 {
+  top: 0px !important;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -713,6 +717,21 @@ h6 {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .-mr-\[1px\] {
@@ -777,6 +796,14 @@ h6 {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
 .block {
@@ -855,6 +882,22 @@ h6 {
   max-height: 800px;
 }
 
+.max-h-\[900px\] {
+  max-height: 900px;
+}
+
+.max-h-\[500px\] {
+  max-height: 500px;
+}
+
+.max-h-\[600px\] {
+  max-height: 600px;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -912,10 +955,6 @@ h6 {
   width: 100%;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .min-w-\[150px\] {
   min-width: 150px;
 }
@@ -932,16 +971,12 @@ h6 {
   min-width: 350px;
 }
 
-.min-w-\[600px\] {
-  min-width: 600px;
+.min-w-\[400px\] {
+  min-width: 400px;
 }
 
 .min-w-\[500px\] {
   min-width: 500px;
-}
-
-.min-w-\[700px\] {
-  min-width: 700px;
 }
 
 .max-w-\[180px\] {
@@ -958,14 +993,6 @@ h6 {
 
 .max-w-\[700px\] {
   max-width: 700px;
-}
-
-.max-w-\[500px\] {
-  max-width: 500px;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
 }
 
 .flex-1 {
@@ -1140,15 +1167,6 @@ h6 {
   border-width: 1px;
 }
 
-.border-\[2px\] {
-  border-width: 2px;
-}
-
-.border-y-2 {
-  border-top-width: 2px;
-  border-bottom-width: 2px;
-}
-
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1163,6 +1181,14 @@ h6 {
 
 .border-r {
   border-right-width: 1px;
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
+.border-b-8 {
+  border-bottom-width: 8px;
 }
 
 .border-dashed {
@@ -1182,6 +1208,11 @@ h6 {
 .border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
+.border-gray-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 
 .bg-\[\#2874A6\] {
@@ -1256,6 +1287,11 @@ h6 {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+}
+
 .p-10 {
   padding: 2.5rem;
 }
@@ -1270,14 +1306,6 @@ h6 {
 
 .p-5 {
   padding: 1.25rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
-}
-
-.p-\[5px\] {
-  padding: 5px;
 }
 
 .p-\[7px\] {
@@ -1354,6 +1382,11 @@ h6 {
   padding-bottom: 0.75rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1374,9 +1407,9 @@ h6 {
   padding-bottom: 5px;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.\!px-5 {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
 }
 
 .pb-10 {
@@ -1419,8 +1452,20 @@ h6 {
   padding-top: 1.25rem;
 }
 
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.\!text-center {
+  text-align: center !important;
 }
 
 .align-top {
@@ -1551,13 +1596,12 @@ h6 {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.outline-none {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
 .duration-75 {
   transition-duration: 75ms;
+}
+
+.only\:border-b-8:only-child {
+  border-bottom-width: 8px;
 }
 
 .hover\:bg-green-600:hover {
@@ -1687,8 +1731,16 @@ h6 {
     width: fit-content;
   }
 
-  .xl\:min-w-\[700px\] {
-    min-width: 700px;
+  .xl\:min-w-\[500px\] {
+    min-width: 500px;
+  }
+
+  .xl\:min-w-\[600px\] {
+    min-width: 600px;
+  }
+
+  .xl\:min-w-\[550px\] {
+    min-width: 550px;
   }
 
   .xl\:max-w-\[700px\] {
@@ -1701,16 +1753,16 @@ h6 {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .xl\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .xl\:flex-row {
